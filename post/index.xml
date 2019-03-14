@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>UCODE</title>
-    <link>https://enta1234.github.io/</link>
-    <description>Recent content on UCODE</description>
+    <title>Posts on UCODE</title>
+    <link>https://enta1234.github.io/post/</link>
+    <description>Recent content in Posts on UCODE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>th-en</language>
     <lastBuildDate>Wed, 13 Mar 2019 17:00:17 +0700</lastBuildDate>
     
-	<atom:link href="https://enta1234.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://enta1234.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="th-en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>
+				[basic_docker] | เจ้า docker ปลาตัวน้อย &middot; UCODE
+		</title>
+	
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="UCODE" />
+	</head>
+	
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">UCODE</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/">Posts</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2019-03-13 17:00:17 &#43;0700 &#43;07">March 13, 2019</time>
+</div>
+		<h1 class="post-title">[basic_docker] | เจ้า docker ปลาตัวน้อย</h1>
+<div class="post-line"></div>
+
+		
+
+		
+
+<blockquote>
+<p>docker เป็น software container ทำงานได้รวดเร็ว ลดขั้นตอนการติดตั้ง os ลง โดยเปลี่ยนเป็น <strong>image file</strong> ให้เรียกใช้ได้ง่ายขึ้น เมื่อสั่งให้ images ทำงาน จะเปลี่ยนสถานะเป็น <strong>container</strong> และสามารถติดตั้ง application server ก็สามารถทำได้ง่ายเพราะ docker มีลักษณะเป็น <strong>infrastructure-as-code</strong> (image &gt;&gt; container)</p>
+</blockquote>
+
+<h2 id="basic-command">basic command</h2>
+
+<table border="1">
+  <tr>
+    <th> command </th>
+    <th> comment </th>
+    <th> ex. </th>
+  </tr>
+  <tr>
+    <td> docker [options] command </td>
+    <td> syntex ในการเรียกใช้คำสั่ง docker </td>
+    <td> <code>docker -v</code> or <code>docker docker build .</code> </td>
+  </tr>
+  <tr>
+    <td> docker images [options] </td>
+    <td> แสดง images ที่มีอยู่ในเครื่อง </td>
+    <td> <code>docker images</code> or <code>docker images -a</code> </td>
+  </tr>
+  <tr>
+    <td> docker ps [options] </td>
+    <td> แสดง container ที่มีอยู่ในเครื่อง </td>
+    <td> <code>docker ps</code> or <code>docker ps -a</code> </td>
+  </tr>
+  <tr>
+    <td> docker pull <images_name> </td>
+    <td> download images จาก repositories </td>
+    <td> <code>docker pull alpine</code> or <code>docker pull mongo</code> </td>
+  </tr>
+  <tr>
+    <td> docker run [options] <images_id/images_name> </td>
+    <td> เรียกใช้งาน images ให้ทำงานขึ้นมาเป็น container </td>
+    <td> <code>docker run -dit --name entro01 alpine</code> or <code>docker run -dit -p 3000:80 -v /myapp:/app/ --name app01 alpine</code> </td>
+  </tr>
+  <tr>
+    <td> docker exec -it <container_id/container_name> [scripting] </td>
+    <td> จะทำการ execute เข้าไปใน container โดยการใช้ script ซึ่งส่วนมากจะมี sh กับ bash </td>
+    <td> <code>docker exec -it entro01 sh</code></td>
+  </tr>
+  <tr>
+    <td> docker start <container_id/container_name> </td>
+    <td> เริ่มใช้งานของ container ที่ stop อยู่ </td>
+    <td> <code>docker start entro01</code> or <code>docker start 440as5ddaa66</code> </td>
+  </tr>
+  <tr>
+    <td> docker stop <container_id/container_name> </td>
+    <td> หยุดการทำงานของ container ที่ start อยู่ </td>
+    <td> <code>docker stop entro01</code> or <code>docker stop 440as5ddaa66</code> </td>
+  </tr>
+  <tr>
+    <td> docker rm [options] <container_id/container_name> </td>
+    <td> ทำการลบ container ที่ระบุด้วย id หรือ name </td>
+    <td> <code>docker rm entro01</code> or <code>docker rm -f 440as5ddaa66</code> </td>
+  </tr>
+  <tr>
+    <td> docker rmi [options] <images_id/images_name> </td>
+    <td> ทำการลบ images ที่ระบุ ด้วย id </td>
+    <td> <code>docker rmi entro01</code> or <code>docker rmi -f 440as5ddaa66</code> </td>
+  </tr>
+</table>
+
+<h2 id="cp1-pull-images">cp1 pull images</h2>
+
+<blockquote>
+<p>ให้ทำการ pull <strong>image</strong> ลงมาไว้ภายในเครื่อง</p>
+</blockquote>
+
+<p><code>&gt;_ docker pull alpine</code>
+  <code>&gt;_ docker pull python:2.7.16-alpine3.8</code></p>
+
+<h2 id="cp2-run-container">cp2 run container</h2>
+
+<blockquote>
+<p>ทำการใช้งาน image ที่ได้ pull ลงมา โดยเปลี่ยนเป็น <strong>container</strong> ด้วยคำสั่ง run</p>
+</blockquote>
+
+<ul>
+<li>1 <code>&gt;_ docker run --rm -it --name entro01 alpine</code></li>
+<li>2 <code>&gt;_ docker run -dit -p 3000:3000 --name entro01 alpine</code></li>
+<li>3 <code>&gt;_ docker run --rm -it -w /app/myweb --expose 3000 -p 3000:3000 --mount .\:/app/myweb python:2.7.16-alpine3.8 python main.py</code>
+<br /></li>
+</ul>
+
+<h2 id="cp3-dockerfile">cp3 Dockerfile</h2>
+
+<blockquote>
+<p>เราสามารถคำสั่งของ docker เก็บไว้เป็นไฟล์ได้เราจะเรียกไฟล์นั้นว่า Dockerfile</p>
+</blockquote>
+
+<p><code>&gt;_ cd your/project</code></p>
+
+<p><code>&gt;_ vi Dockerfile</code></p>
+
+<p>ตัวอย่าง <a href="https://github.com/enta1234/basic_docker/blob/master/Dockerfile">Dockerfile</a>.</p>
+
+<h2 id="cp4-build-image">cp4 build image</h2>
+
+<blockquote>
+<p>เมื่อเตรียม Dockerfile เสร็จเราสามารถ image ของเราเองได้</p>
+</blockquote>
+
+<p><code>&gt;_ docker build -t myweb:1.0.0 .</code></p>
+
+<blockquote>
+<p>หรือในกรณีที่เราไมได้ตั้งชื่อไฟล์ว่า Dockerfile ให้เราระบุให้ชัดเจน</p>
+</blockquote>
+
+<p><code>&gt;_ docker build -t myweb:1.0.0 ./docker-file</code></p>
+
+<p>ex.</p>
+
+<p><code>&gt;_ docker run -dit -p 8000:8000 --name webEntro myweb:1.0.0</code></p>
+
+<h2 id="cp5-stop-start-delete">cp5 stop-start-delete</h2>
+
+<p>ex. stop container</p>
+
+<p><code>&gt;_ docker stop webEntro</code></p>
+
+<p>ex. start container</p>
+
+<p><code>&gt;_ docker stop webEntro</code></p>
+
+<p>ex. delete container</p>
+
+<p><code>&gt;_ docker rm -f webEntro</code></p>
+
+<p>ex. delete images</p>
+
+<p><code>&gt;_ docker rmi -f myweb:1.0.0</code></p>
+
+<p>ex. delete, stop and start all container.</p>
+
+<p><code>&gt;_ docker rm -f $(docker ps -qa)</code></p>
+
+<p>ex. delete all images.</p>
+
+<p><code>&gt;_ docker rmi -f $(docker images -q -a)</code></p>
+
+<p><a href="https://github.com/enta1234/docker-cp">อ่านเพิ่มเติมได้ที่</a></p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-03-15 01:05:28.1735531 &#43;0700 &#43;07 m=&#43;0.253978501">2019</time> chantatha.p. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
