@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th-en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>
+				การใช้ Git เบื้องต้น #1 &middot; UCODE
+		</title>
+	
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="UCODE" />
+	</head>
+	
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">UCODE</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/">Posts</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2017-06-12 01:29:05 &#43;0700 &#43;07">June 12, 2017</time>
+</div>
+		<h1 class="post-title">การใช้ Git เบื้องต้น #1</h1>
+<div class="post-line"></div>
+
+		
+
+		
+
+<p>เริ่มวิธีใช้เลยนะเรื่องความมงความหมายไปหาอ่านเอาเองนะ มีคนเขียนไว้เยอะแล้วลองไปหาอ่านดูว่ามันใช้ทำอะไร หรือมันเริ่มยังไง 55555+</p>
+
+<h1 id="motivation">Motivation</h1>
+
+<p>สมมุติว่าเราต้องทำงานกับเพื่อน แล้วอยู่คนละที่กันไม่อยากไปหามันบ้านไกลกันไงที่นี้ พอเรา dev งานไปมันมีไฟล์ที่เราต้องแก้หน้าเดียวกันแล้วพอเรา copy เอาไฟล์เพื่อนมามันก็ดันวางทับไฟล์ที่เราพึ่งเขียนไป อ้าวชิบหายทำไงที่นี้แม้งวางทับไปแล้ว&hellip;</p>
+
+<h1 id="เร-มต-นใช-git">เริ่มต้นใช้ git</h1>
+
+<p>มาเริ่มเลย สิ่งที่ต้องมีคือ</p>
+
+<ul>
+<li><a href="https://git-scm.com/downloads?fbclid=IwAR0lUmoFjOnW_z_BD8e_ycjiOGoY7x8gC46F09VXI857Bnltjg9ccgs6cy0">Git</a> โหลดมาลงซะ</li>
+</ul>
+
+<h3 id="cp1-เตร-ยมงานจ-ะ">cp1 เตรียมงานจ้ะ</h3>
+
+<p>เปิดใช้งาน Terninal or Command line ก่อนเลยจ้า</p>
+
+<p><img src="/images/basic_git/git_cmd.jpg" alt="img1" /></p>
+
+<p>ใช้ Command line เข้าไปยัง Path งานของเรา</p>
+
+<p><code>_&gt; mkdir mygit</code></p>
+
+<p><code>_&gt; cd mygit</code></p>
+
+<p>จะได้แบบนี้</p>
+
+<p><img src="/images/basic_git/git_cmd02.jpg" alt="img2" /></p>
+
+<p>ที่นี้เราจะสร้าง project git เพื่อให้ไฟล์ที่อยู่ใต้ folder นี้ถูกจัดการด้วย git ด้วยคำสั่ง</p>
+
+<p><code>_&gt; git init</code></p>
+
+<p><img src="/images/basic_git/git_cmd03.jpg" alt="img3" /></p>
+
+<p>เราจะตรวจสอบสถานะว่า git เราพร้อมใช้งานด้วยคำสั่ง</p>
+
+<p><code>_&gt; git status</code></p>
+
+<p><img src="/images/basic_git/git_cmd04.jpg" alt="img4" /></p>
+
+<p>เท่านี้ git เราก็พร้อมที่จะใช้งานแบ้ววววววววววววววว</p>
+
+<hr />
+
+<h3 id="cp2-ใช-งานก-อนไม-รอแล-วน-าาาาาาาา">cp2 ใช้งานก่อนไม่รอแล้วน่าาาาาาาา</h3>
+
+<p>ให้เราทำการสร้างไฟล์ <strong>README.md</strong></p>
+
+<pre><code>  mygit
+    |- .git
+    |- README.md
+</code></pre>
+
+<p>เราจะได้โครงสร้างโปรเจคแบบนี้แล้วนะจ๊ะะะะะ (ไฟล์ .git เป็นไฟล์ของ git เราไม่ต้องสนใจแต่ก็ไม่ได้แปลว่าไม่สำคัญ)</p>
+
+<p>เปิดไฟล์ README.md ขึ้นแล้วแก้อะไรซักอย่างเข้าไป</p>
+
+<p><img src="/images/basic_git/git_cmd05.jpg" alt="img5" />
+  <center> <span style="color:#808080; font-size: 13px"> (<code> &ldquo;_&gt; # hello world!&rdquo; &gt; README.md </code>) </span> </center></p>
+
+<p>เราลองมาเช็คสถานะของ project เราอีกรอบ (ซึ่งเราจะต้องเช็ค <code>_&gt; git status</code> ก่อนจะทำอะไรซักอย่างภายใน git เพื่อให้เกิดข้อผิดพลาดน้อยที่สุด)</p>
+
+<p><code>_&gt; git status</code></p>
+
+<p><img src="/images/basic_git/git_cmd06.jpg" alt="img6" /></p>
+
+<p>เจ้า git จะบอกเราว่า เห้ยนี้คุณยังไม่ได้ commit นะ แล้วก็มีไฟล์ที่ยัง untrack ด้วยนะ</p>
+
+<p>ในกรณีที่เรามีไฟล์ untrack และเราต้องการให้ git สนใจไฟล์นั้นด้วย เราจะต้องทำการ track ไฟล์เสียก่อนจ๊ะด้วยคำสั่ง</p>
+
+<p><code>_&gt; git add README.md</code>  หรือ   <code>_&gt; git add .</code> (<em>git add .</em> จะหมายถึงไฟล์ทั้งหมดที่ untrack)</p>
+
+<p><img src="/images/basic_git/git_cmd07.jpg" alt="img7" /></p>
+
+<p>ต่อมาใช้เราจะทำการ save file ด้วยคำสั่ง</p>
+
+<p><code>_&gt; git commit -am &quot;init project&quot;</code></p>
+
+<p>เสร็จแล้วที่นี้เราก็ init ptoject เราด้วย git เป็นอันเสร็จเรียบร้อย</p>
+
+<p>ต่อไปจะอธิบายเรื่อง branch นะจ๊ะ ch#1 นี้ขอจบเท่านี้</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/basic_docker/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-03-23 00:36:30.7638414 &#43;0700 &#43;07 m=&#43;0.097250001">2019</time> chantatha.p. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

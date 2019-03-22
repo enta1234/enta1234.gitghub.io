@@ -21,5 +21,28 @@
  basic command   command   comment   ex.     docker [options] command   syntex ในการเรียกใช้คำสั่ง docker   docker -v or docker docker build .     docker images [options]   แสดง images ที่มีอยู่ในเครื่อง   docker images or docker images -a     docker ps [options]   แสดง container ที่มีอยู่ในเครื่อง   docker ps or docker ps -a     docker pull    download images จาก repositories   docker pull alpine or docker pull mongo     docker run [options]    เรียกใช้งาน images ให้ทำงานขึ้นมาเป็น container   docker run -dit --name entro01 alpine or docker run -dit -p 3000:80 -v /myapp:/app/ --name app01 alpine     docker exec -it  [scripting]   จะทำการ execute เข้าไปใน container โดยการใช้ script ซึ่งส่วนมากจะมี sh กับ bash   docker exec -it entro01 sh    docker start    เริ่มใช้งานของ container ที่ stop อยู่   docker start entro01 or docker start 440as5ddaa66     docker stop    หยุดการทำงานของ container ที่ start อยู่   docker stop entro01 or docker stop 440as5ddaa66     docker rm [options]    ทำการลบ container ที่ระบุด้วย id หรือ name   docker rm entro01 or docker rm -f 440as5ddaa66     docker rmi [options]    ทำการลบ images ที่ระบุ ด้วย id   docker rmi entro01 or docker rmi -f 440as5ddaa66    cp1 pull images  ให้ทำการ pull image ลงมาไว้ภายในเครื่อง</description>
     </item>
     
+    <item>
+      <title>การใช้ Git เบื้องต้น #1</title>
+      <link>https://enta1234.github.io/post/basic-git-1/</link>
+      <pubDate>Mon, 12 Jun 2017 01:29:05 +0700</pubDate>
+      
+      <guid>https://enta1234.github.io/post/basic-git-1/</guid>
+      <description>เริ่มวิธีใช้เลยนะเรื่องความมงความหมายไปหาอ่านเอาเองนะ มีคนเขียนไว้เยอะแล้วลองไปหาอ่านดูว่ามันใช้ทำอะไร หรือมันเริ่มยังไง 55555+
+Motivation สมมุติว่าเราต้องทำงานกับเพื่อน แล้วอยู่คนละที่กันไม่อยากไปหามันบ้านไกลกันไงที่นี้ พอเรา dev งานไปมันมีไฟล์ที่เราต้องแก้หน้าเดียวกันแล้วพอเรา copy เอาไฟล์เพื่อนมามันก็ดันวางทับไฟล์ที่เราพึ่งเขียนไป อ้าวชิบหายทำไงที่นี้แม้งวางทับไปแล้ว&amp;hellip;
+เริ่มต้นใช้ git มาเริ่มเลย สิ่งที่ต้องมีคือ
+ Git โหลดมาลงซะ  cp1 เตรียมงานจ้ะ เปิดใช้งาน Terninal or Command line ก่อนเลยจ้า
+ใช้ Command line เข้าไปยัง Path งานของเรา
+_&amp;gt; mkdir mygit
+_&amp;gt; cd mygit
+จะได้แบบนี้
+ที่นี้เราจะสร้าง project git เพื่อให้ไฟล์ที่อยู่ใต้ folder นี้ถูกจัดการด้วย git ด้วยคำสั่ง
+_&amp;gt; git init
+เราจะตรวจสอบสถานะว่า git เราพร้อมใช้งานด้วยคำสั่ง
+_&amp;gt; git status
+เท่านี้ git เราก็พร้อมที่จะใช้งานแบ้ววววววววววววววว
+cp2 ใช้งานก่อนไม่รอแล้วน่าาาาาาาา ให้เราทำการสร้างไฟล์ README.md
+ mygit |- .</description>
+    </item>
+    
   </channel>
 </rss>
