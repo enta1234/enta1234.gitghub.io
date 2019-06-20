@@ -54,6 +54,8 @@
 <p>docker เป็น software container ทำงานได้รวดเร็ว ลดขั้นตอนการติดตั้ง os ลง โดยเปลี่ยนเป็น <strong>image file</strong> ให้เรียกใช้ได้ง่ายขึ้น เมื่อสั่งให้ images ทำงาน จะเปลี่ยนสถานะเป็น <strong>container</strong> และสามารถติดตั้ง application server ก็สามารถทำได้ง่ายเพราะ docker มีลักษณะเป็น <strong>infrastructure-as-code</strong> (image &gt;&gt; container)</p>
 </blockquote>
 
+<p><a href="https://github.com/enta1234/docker-cp">อ่านเพิ่มเติมได้ที่</a></p>
+
 <h2 id="basic-command">basic command</h2>
 
 <table border="1">
@@ -114,6 +116,8 @@
   </tr>
 </table>
 
+<p><a href="https://docs.docker.com/engine/reference/commandline/docker/">รายละเอียดเพิ่มเติม</a></p>
+
 <h2 id="cp1-pull-images">cp1 pull images</h2>
 
 <blockquote>
@@ -131,7 +135,7 @@
 
 <ul>
 <li>1 <code>&gt;_ docker run --rm -it --name entro01 alpine</code></li>
-<li>2 <code>&gt;_ docker run -dit -p 3000:3000 --name entro01 alpine</code></li>
+<li>2 <code>&gt;_ docker run -d -p 3000:3000 --name entro01 alpine</code></li>
 <li>3 <code>&gt;_ docker run --rm -it -w /app/myweb --expose 3000 -p 3000:3000 --mount .\:/app/myweb python:2.7.16-alpine3.8 python main.py</code>
 <br /></li>
 </ul>
@@ -164,7 +168,7 @@
 
 <p>ex.</p>
 
-<p><code>&gt;_ docker run -dit -p 8000:8000 --name webEntro myweb:1.0.0</code></p>
+<p><code>&gt;_ docker run -d -p 8000:8000 --name webEntro myweb:1.0.0</code></p>
 
 <h2 id="cp5-stop-start-delete">cp5 stop-start-delete</h2>
 
@@ -199,7 +203,7 @@
 	</div>
 
 	<div class="pagination">
-		<a href="/post/basic-git-1/" class="left arrow">&#8592;</a>
+		<a href="/post/basic-git-2/" class="left arrow">&#8592;</a>
 
 		<a href="#" class="top">Top</a>
 	</div>
@@ -208,7 +212,7 @@
 
         		<footer>
 			<span>
-			&copy; <time datetime="2019-03-23 00:36:30.7638414 &#43;0700 &#43;07 m=&#43;0.097250001">2019</time> chantatha.p. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			&copy; <time datetime="2019-06-20 17:08:54.5254722 &#43;0700 &#43;07 m=&#43;0.389969001">2019</time> chantatha.p. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
 			</span>
 		</footer>
 

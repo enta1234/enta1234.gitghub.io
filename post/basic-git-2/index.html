@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th-en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>
+				การใช้ Git เบื้องต้น #2 git branch &middot; UCODE
+		</title>
+	
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="UCODE" />
+	</head>
+	
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">UCODE</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/">Posts</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2017-06-15 10:10:07 &#43;0700 &#43;07">June 15, 2017</time>
+</div>
+		<h1 class="post-title">การใช้ Git เบื้องต้น #2 git branch</h1>
+<div class="post-line"></div>
+
+		
+
+		
+
+<p>เอาละครับผมท่านผู้อ่านทีนี้เราจะได้รู้เรื่องของ branch กันซะทีเย้~~!
+ขอเกริ่นก่อนนะครับเรื่อง branch เนียสำคัญมาก เพราะต่อไปเราจะต้องเข้ามาเกี่ยวข้องกับเรื่องของ git flow และยังเป็นข้อดีของ version control อีกด้วยเอาละถึงเวลาแล้วววว</p>
+
+<p><a href="/post/basic-git-1">การใช้ Git เบื้องต้น #1 git init</a></p>
+
+<h1 id="ร-จ-ก-state-ของ-git">รู้จัก state ของ git</h1>
+
+<p><figure class="image">
+    <img src="https://git-scm.com/figures/18333fig0201-tn.png" alt="git stage">
+    <figcaption> <center> ที่มา <a href="https://git-scm.com">https://git-scm.com</a> </center></figcaption>
+  </figure></p>
+
+<p>state ของ git จะถูกแบ่งออกเป็น 4 state</p>
+
+<ul>
+<li><strong>Untrack</strong> คือไฟล์ที่ยังไม่โดนคำสั่ง <code>git add</code></li>
+<li><strong>Unmodified</strong> คือไฟล์ที่โดน <code>git commit</code> แล้ว</li>
+<li><strong>Modified</strong> คือไฟล์ที่โดน <code>git commit</code> แล้ว และมีการแก้ไขเกิดขึ้น</li>
+<li><strong>Staged</strong> คือไฟล์ที่กำลังแก้ไขอยู่(Modified) และโดน <code>git add</code> เพื่อที่จะเตรียม commit</li>
+</ul>
+
+<p>การทำงานไหลตามลูกศรตามภาพ <code>Untrack -&gt; Unmodified -&gt; Modified -&gt; Staged</code> หลังจากที่เรา commit เราจะได้ <code>Unmodified</code> เป็นสถานะไฟล์</p>
+
+<p># git branch ซักทีเหอะ</p>
+
+<p>ขออนุญาต ต่อจากโพสเดิมครับผม ถ้าเราใช่คำสั่ง <code>git status</code> ดูเราจะพบว่าเราอยู่ที่ master</p>
+
+<p><img src="/images/basic_git02/git02_01.jpg" alt="img1" /></p>
+
+<p>ที่นี้ให้เราใช้คำสั่ง</p>
+
+<p><code>git branch</code></p>
+
+<p>เพื่อที่จะดูว่าเรามี branch อะไรบ้างและเช็คสถานะว่าเราอยู่ branch ไหนในขณะนี้ซึ่งตอนนี้เรามีแค่ master และอยู่ที่ master</p>
+
+<p><img src="/images/basic_git02/git02_02.jpg" alt="img2" /></p>
+
+<p>ที่นี้สามารถสร้าง branch ใหม่ ด้วยคำสั่ง</p>
+
+<p><code>git branch &lt;branch_name&gt;</code></p>
+
+<p>เพิ่มทำการสร้าง branch แต่เรายังไม่ได้ย้ายไปที่ branch ใหม่นะครับ 5555+ แค่สร้างเฉยๆ เราสามารถย้าย branch ด้วยคำสั่ง</p>
+
+<p><code>git checkout &lt;branch_name&gt;</code></p>
+
+<p><img src="/images/basic_git02/git02_03.jpg" alt="img3" /></p>
+
+<p>ที่นี้แหม่มันชั่งยุ่งยากเหลือเกินนนนนนน การจะสร้าง branch เนียแต่ครับทุกท่านเรามาสารถสร้างได้ด้วยคำสั่งเดียวครับ</p>
+
+<p><code>git checkout -b &lt;branch_name&gt;</code></p>
+
+<p>ที่นี้เราก็ได้เหมือนกับสองคำสั่งข้างบนเลยยยยยยยยย แหม่ง่ายจริมๆเลย</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/basic-git-1/" class="left arrow">&#8592;</a>
+		<a href="/post/basic_docker/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-06-20 17:08:54.5254722 &#43;0700 &#43;07 m=&#43;0.389969001">2019</time> chantatha.p. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>
