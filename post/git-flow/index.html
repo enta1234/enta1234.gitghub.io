@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th-en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>
+				[Git Flow] git แบบ flow flow &middot; UCODE
+		</title>
+	
+		
+  		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="UCODE" />
+	</head>
+	
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/">
+					<h2 class="nav-title">UCODE</h2>
+				</a>
+				<ul>
+    <li><a href="/about">About</a></li>
+    <li><a href="/">Posts</a></li>
+</ul>
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="post-info">
+    <span>Written by</span>
+        
+        <br>
+        <span>on&nbsp;</span><time datetime="2019-04-10 16:11:53 &#43;0700 &#43;07">April 10, 2019</time>
+</div>
+		<h1 class="post-title">[Git Flow] git แบบ flow flow</h1>
+<div class="post-line"></div>
+
+		
+
+		
+
+<p>หลังจากที่เราใช้ git ไปซักพักแล้วเราคงน่าจะเคยใช้ <a href="https://bitbucket.org/product?&amp;aceid=&amp;adposition=1t1&amp;adgroup=53586430497&amp;campaign=1074155406&amp;creative=270475854472&amp;device=c&amp;keyword=source%20tree&amp;matchtype=e&amp;network=g&amp;placement=&amp;ds_kids=p33403147979&amp;ds_e=GOOGLE&amp;ds_eid=700000001551985&amp;ds_e1=GOOGLE&amp;gclid=EAIaIQobChMI652b4-ir4wIV1QorCh0X9QlzEAAYASAAEgI6RfD_BwE&amp;gclsrc=aw.ds">sourcetree</a> ที่เป็น GUI ที่นิยมมากในระดับหนึ่งของเอ้าแล้วถ้าเราอยากจะใช้ command ละหรือ ไม่อยากใช้ GUI ช่วยทำไงดี นั้นสินะ</p>
+
+<h1 id="เข-าใจเร-องของ-branch">เข้าใจเรื่องของ branch</h1>
+
+<p>หลักๆของ git flow จะมี</p>
+
+<ul>
+<li>master</li>
+<li>develop</li>
+<li>feature/&lt;name&gt;</li>
+<li>release/&lt;name&gt;</li>
+<li>hotfix/&lt;name&gt;</li>
+</ul>
+
+<h2 id="develop-feature">develop &amp; feature</h2>
+
+<p><img src="/images/git_flow/git-flow01.png" alt="img1" /></p>
+
+<p>จากรูปเมื่อเราเริ่ม git flow เราจะแตกออก master ไปยัง develop
+  <strong>กฏมีอยู่ว่าเราจะไม่แก้ไฟล์ที่ master</strong> โดยตรงแต่เราจะทำงานที่ develop โดยการแก้ไข้ให้แตก feature ออกมาและแก้ที่ feature เอาเมื่อเราปิด feature จะถูก merge เข้าที่ develop <em>(feature ควรเป็นงานเล็กเพื่อง่ายต่อการปิด branch ในแต่ละวัน)</em></p>
+
+<h2 id="release">release</h2>
+
+<p><img src="/images/git_flow/git-flow02.png" alt="img2" /></p>
+
+<p>เมื่อเราทำ feature เสร็จแล้วและต้องการที่จะเปิด version เราจะทำ release ซึ่งจะแตกออกจาก develop และเมื่อปิด release จะถูก merge เข้า master และ develop และจะถูกติด tag ตามชื่อ release (<em>กฏคือในขณะเวลาหนึ่ง release ควรมี 1 เท่านั้น</em>)</p>
+
+<h2 id="hotfix">hotfix</h2>
+
+<p><img src="/images/git_flow/git-flow03.png" alt="img3" /></p>
+
+<p>ถ้าเกิดเรามี bug ที่ master หรือ production เราสามารถแตก hotfix ขึ้นมาแก้และเมื่อปิดจะกลับไปยัง master และ develop</p>
+
+<h1 id="สร-ป">สรุป</h1>
+
+<p>เราควรออกแบบรูปแบบของ git flow ตามงานหรือ Project นั้นๆและต้องคุยกับคนในทีมก่อนนะ 5555+ จะได้เข้าใจตรงกันและลดการ conflicts ของไฟล์</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/post/basic_docker/" class="left arrow">&#8592;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2019-07-12 15:32:26.606601 &#43;0700 &#43;07 m=&#43;0.119000501">2019</time> chantatha.p. Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

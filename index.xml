@@ -6,10 +6,22 @@
     <description>Recent content on UCODE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>th-en</language>
-    <lastBuildDate>Wed, 13 Mar 2019 17:00:17 +0700</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2019 16:11:53 +0700</lastBuildDate>
     
 	<atom:link href="https://enta1234.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[Git Flow] git แบบ flow flow</title>
+      <link>https://enta1234.github.io/post/git-flow/</link>
+      <pubDate>Wed, 10 Apr 2019 16:11:53 +0700</pubDate>
+      
+      <guid>https://enta1234.github.io/post/git-flow/</guid>
+      <description>หลังจากที่เราใช้ git ไปซักพักแล้วเราคงน่าจะเคยใช้ sourcetree ที่เป็น GUI ที่นิยมมากในระดับหนึ่งของเอ้าแล้วถ้าเราอยากจะใช้ command ละหรือ ไม่อยากใช้ GUI ช่วยทำไงดี นั้นสินะ
+เข้าใจเรื่องของ branch หลักๆของ git flow จะมี
+ master develop feature/&amp;lt;name&amp;gt; release/&amp;lt;name&amp;gt; hotfix/&amp;lt;name&amp;gt;  develop &amp;amp; feature จากรูปเมื่อเราเริ่ม git flow เราจะแตกออก master ไปยัง develop กฏมีอยู่ว่าเราจะไม่แก้ไฟล์ที่ master โดยตรงแต่เราจะทำงานที่ develop โดยการแก้ไข้ให้แตก feature ออกมาและแก้ที่ feature เอาเมื่อเราปิด feature จะถูก merge เข้าที่ develop (feature ควรเป็นงานเล็กเพื่อง่ายต่อการปิด branch ในแต่ละวัน)
+release เมื่อเราทำ feature เสร็จแล้วและต้องการที่จะเปิด version เราจะทำ release ซึ่งจะแตกออกจาก develop และเมื่อปิด release จะถูก merge เข้า master และ develop และจะถูกติด tag ตามชื่อ release (กฏคือในขณะเวลาหนึ่ง release ควรมี 1 เท่านั้น)</description>
+    </item>
     
     <item>
       <title>[basic_docker] | เจ้า docker ปลาตัวน้อย</title>

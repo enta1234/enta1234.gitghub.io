@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://enta1234.github.io/post/git-flow/</loc>
+    <lastmod>2019-04-10T16:11:53+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://enta1234.github.io/about/</loc>
     <lastmod>2019-03-13T23:53:48+07:00</lastmod>
   </url>
@@ -29,7 +34,7 @@
   
   <url>
     <loc>https://enta1234.github.io/post/</loc>
-    <lastmod>2019-03-13T17:00:17+07:00</lastmod>
+    <lastmod>2019-04-10T16:11:53+07:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -40,7 +45,7 @@
   
   <url>
     <loc>https://enta1234.github.io/</loc>
-    <lastmod>2019-03-13T17:00:17+07:00</lastmod>
+    <lastmod>2019-04-10T16:11:53+07:00</lastmod>
     <priority>0</priority>
   </url>
   
